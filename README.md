@@ -5,6 +5,7 @@
 ## 目录
 
 - [article-illustrator](./article-illustrator/) — 文章自动配图
+- [article-to-video](./article-to-video/) — 带配图的公众号文章转视频（配音 / 字幕 / 封面）
 - [md2wchtml](./md2wchtml/) — Markdown 转微信公众号风格 HTML
 
 ## 技能说明
@@ -17,6 +18,22 @@
 node scripts/generate-images.js <markdown-file>            # 为所有章节配图
 node scripts/generate-images.js <markdown-file> --replace <section-index>  # 替换某节配图
 ```
+
+### article-to-video
+
+把一篇带配图的公众号 / Markdown 文章，做成横屏视频——满屏配图 + AI 配音 + 关键词与字幕 + 上传封面。用文章自己的手绘配图当主角，配沉稳旁白，产出 B 站 / 视频号可发的成片。
+
+核心纪律（也是踩过的坑）：**先出带时间线的剧本、确认后再做画面**；时长由旁白字数决定（中文约 300 字/分）；4:3 配图放进 16:9 用「虚化补底 + 不裁切」；白底配图先做透明化、别套卡片；文字放画面下部避免压主体；音频必须做响度归一化；没有视觉 / 听觉时用 `qwen-vl-max` 代看、`qwen3-omni-flash` 代听。
+
+```bash
+python3 scripts/prep_images.py --dir video/assets/img          # 配图白底透明化
+python3 scripts/gen_tts.py --config video/video.config.json    # 逐场景配音 + 响度归一化
+python3 scripts/gen_composition.py --config video/video.config.json \
+        --manifest video/assets/audio/manifest.json --out video/index.html
+bash scripts/make_cover.sh 封面.html 视频封面/封面.png          # 封面截图
+```
+
+依赖：Node ≥ 22、FFmpeg、HyperFrames CLI、Puppeteer Chrome、Python(numpy/Pillow)。需在环境变量里提供 TTS 的 API Key（如 `DASHSCOPE_API_KEY`）。
 
 ### md2wchtml
 

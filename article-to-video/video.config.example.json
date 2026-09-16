@@ -1,0 +1,43 @@
+{
+  "width": 1920,
+  "height": 1080,
+  "gap": 0.8,
+  "theme": {
+    "paper": "#F6F1E6",
+    "ink": "#23272E",
+    "ink_soft": "#5A5F68",
+    "blue": "#0B63C5",
+    "coral": "#C6402C"
+  },
+  "fonts": {
+    "serif": "assets/fonts/NotoSerifSC.woff2",
+    "sans": "assets/fonts/NotoSansSC.woff2"
+  },
+  "audio_dir": "assets/audio",
+  "tts": {
+    "provider": "qwen-audio",
+    "model": "qwen-audio-3.0-tts-plus",
+    "voice": "longanlufeng",
+    "instruction": "沉稳的中年男性，中气十足，吐字清晰有力，节奏干脆",
+    "emotion_tag": "[serious]",
+    "workspace_url": "https://token-plan.cn-beijing.maas.aliyuncs.com",
+    "base_url": "https://dashscope.aliyuncs.com",
+    "language_type": "Chinese",
+    "sample_rate": 24000,
+    "api_key_env": "DASHSCOPE_API_KEY"
+  },
+  "cover": {
+    "img": "assets/img/cover.jpg",
+    "tag": "系统化思维 · 系列第一篇",
+    "lines": [
+      { "text": "警惕别人塞给你的" },
+      { "text": "Aha Moment！", "cls": "accent" }
+    ]
+  },
+  "scenes": [
+    { "id": 1, "img": "cover", "kind": "cover", "narration": "警惕别人塞给你的 Aha Moment。一个观点越让你瞬间“原来如此”，你越要警惕。" },
+    { "id": 2, "img": "s1-firstread", "kw": "「原来如此」", "color": "blue", "sub": "刷完，感觉脑子升级了八个档次", "narration": "你刷到过这样的内容吗？读的时候全程“原来如此”“对对对”，读完整个人神清气爽，感觉脑子升级了八个档次。" },
+    { "id": 3, "img": "s1-hook", "kw": "越爽的顿悟，越要警惕", "color": "coral", "sub": "它被精心设计，只为让你转发", "narration": "这种爽感真的会上瘾。但一个好懂、反直觉、又让你立刻“我懂了”的观点，往往还有另一重身份：它是被别人精心设计出来、专门让你转发的好产品。" },
+    { "id": 4, "img": "s2-milkbox", "kw": "牛奶为什么是方的？", "color": "ink", "sub": "方形最省冰柜空间", "narration": "先从最经典的开始。牛奶盒为什么是方的？流行的解释是：牛奶要放冷柜，冷柜空间金贵，方形最省空间。" }
+  ]
+}
