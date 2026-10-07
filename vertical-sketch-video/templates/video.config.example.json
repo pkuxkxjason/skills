@@ -1,0 +1,73 @@
+{
+  "title": "<视频短标题>",
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "gap": 0.8,
+  "speed": 1.25,
+  "audio_dir": "assets/audio",
+  "fonts": {
+    "serif": "assets/fonts/NotoSerifSC.woff2",
+    "sans": "assets/fonts/NotoSansSC.woff2"
+  },
+  "theme": {
+    "paper": "#F6F1E6",
+    "ink": "#23272E",
+    "ink_soft": "#5A5F68",
+    "blue": "#0B63C5",
+    "coral": "#C6402C",
+    "green": "#2E8B57"
+  },
+  "tts": {
+    "label": "配音靠谱男",
+    "provider": "qwen-audio",
+    "model": "qwen-audio-3.0-tts-plus",
+    "voice": "longanlufeng",
+    "instruction": "沉稳的中年男性，中气十足，吐字清晰有力，节奏干脆，适合知识科普讲解",
+    "emotion_tag": "[serious]",
+    "workspace_url": "https://token-plan.cn-beijing.maas.aliyuncs.com",
+    "api_key_env": "DASHSCOPE_TOKEN_PLAN_KEY",
+    "provider_key": "bailian-token-plan",
+    "sample_rate": 24000
+  },
+  "talking_head": {
+    "enabled": false,
+    "src": "原始音视频/口播样本.mov",
+    "shape": "circle",
+    "position": "bottom-right",
+    "size": 320,
+    "margin": 40,
+    "ring": 6,
+    "ring_color": "#FFFFFF",
+    "shadow": true
+  },
+  "scenes": [
+    {
+      "id": 1,
+      "img": "s1-xxx",
+      "kw": "<关键词·大字>",
+      "sub": "<关键句·中字>",
+      "color": "coral",
+      "narration": "<旁白·取自正文，可精简>"
+    },
+    {
+      "id": 2,
+      "img": "s2-xxx",
+      "kw": "<关键词>",
+      "sub": "<关键句>",
+      "color": "ink",
+      "narration": "<旁白>",
+      "tts_text": "<可选：只改配音读音、不改字幕时用，如多音字>"
+    },
+    {
+      "id": 3,
+      "img": "s3-card",
+      "kind": "card",
+      "color": "coral",
+      "kw": "<品牌卡大字>",
+      "sign_name": "我是张志明",
+      "sign_line": "关注我，关注人与 AI 的相处之道",
+      "narration": "<结束卡旁白（会被念；署名只上屏不念）>"
+    }
+  ]
+}
